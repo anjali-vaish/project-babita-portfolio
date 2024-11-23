@@ -21,7 +21,7 @@
   width: 100%;
   max-width: 1000px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* For desktop, keep circles centered */
   align-items: center;
 }
 
@@ -76,6 +76,7 @@
   width: 250px;
   text-align: left;
   z-index: 10;
+  animation: none; /* Ensure the pop-ups do not blink */
 }
 
 .experience-box h3 {
@@ -97,6 +98,10 @@
   50% {
     opacity: 0.5;
   }
+}
+
+.circle {
+  animation: blink 1.5s infinite; /* Add blinking animation */
 }
 
 /* Next Section Button Styling */
@@ -124,4 +129,52 @@
   margin-left: 10px;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .timeline {
+    flex-direction: column; /* Stack circles vertically */
+    align-items: flex-start; /* Align circles to the left */
+    gap: 40px; /* Add spacing between circles */
+  }
+
+  .timeline-item {
+    margin-left: 30px; /* Shift circles further left */
+  }
+
+  .experience-box {
+    top: 50%;
+    left: calc(100% - 50px); /* Position the box further to the right */
+    transform: translateY(-50%);
+    width: 300px; /* Keep box width for readability */
+    animation: none; /* No animation for pop-ups */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .experience-title {
+    font-size: 1.8em; /* Adjust font size for smaller screens */
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    font-size: 0.9em; /* Adjust font size inside circles */
+  }
+
+  .timeline-item {
+    margin-left: 20px; /* Shift circles even more left for smaller screens */
+  }
+
+  .experience-box {
+    width: 250px; /* Reduce box width */
+    left: calc(100% - 60px); /* Adjust box position further to the right */
+    animation: none; /* No animation for pop-ups */
+  }
+
+  .next-section-button {
+    font-size: 1em; /* Smaller button font size */
+    padding: 10px 20px;
+  }
 }

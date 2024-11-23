@@ -9,7 +9,7 @@ function About() {
   const scrollToSpecializations = () => {
     const specializationsSection = document.getElementById('specializations');
     specializationsSection.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => setAnimateSpecializations(true), 1000); // Start animation after 1 second
+    setTimeout(() => setAnimateSpecializations(true), 500); // Start animation after scroll
   };
 
   const navigateToExperience = () => {
@@ -55,7 +55,7 @@ function About() {
                   : ''
               }`}
               style={{
-                animationDelay: `${animateSpecializations ? index * 0.5 : 0}s`,
+                animationDelay: `${animateSpecializations ? index * 0.3 : 0}s`,
               }}
             >
               {specialization}

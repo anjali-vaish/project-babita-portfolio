@@ -1,5 +1,5 @@
 .about-container {
-  padding: 100px 20px 50px;
+  padding: 220px 15px 30px; /* Increased top padding to avoid text being cut */
   min-height: 100vh;
   background-color: #E9DBC4;
   color: #333333;
@@ -8,23 +8,24 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-sizing: border-box; /* Ensure padding is calculated properly */
 }
 
 .about-intro {
   max-width: 800px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .about-intro h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   color: #00565B;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .about-intro p {
   font-size: 1.2em;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #333333;
 }
 
@@ -33,53 +34,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0;
+  margin: 15px 0; /* Adjusted margin for smaller screens */
   animation: blink 1.5s ease-in-out infinite;
   cursor: pointer;
 }
 
 .scroll-indicator p {
-  font-size: 1.5em;
+  font-size: 1.2em; /* Reduced font size for smaller screens */
   font-weight: bold;
   color: #00565B;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .down-arrow {
-  font-size: 2em;
+  font-size: 1.8em; /* Reduced arrow size for smaller screens */
   color: #00565B;
   animation: bounce 1s infinite;
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
 /* Specializations Section */
 .specializations-section {
-  margin-top: 50px;
+  margin-top: 40px;
   max-width: 800px;
   text-align: center;
 }
 
 .specializations-section h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #00565B;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .specializations-list {
@@ -89,23 +72,24 @@
 }
 
 .specialization-item {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+  font-size: 1em; /* Adjusted font size for smaller screens */
+  margin-bottom: 10px;
   color: #333333;
   opacity: 0; /* Initially hidden */
   transform: translateX(0); /* No movement initially */
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* Animations for Specializations */
 .appear-from-left {
   opacity: 1;
-  transform: translateX(-100%); /* Slide in from the left */
+  transform: translateX(-100%);
   animation: slide-in-from-left 0.5s ease forwards;
 }
 
 .appear-from-right {
   opacity: 1;
-  transform: translateX(100%); /* Slide in from the right */
+  transform: translateX(100%);
   animation: slide-in-from-right 0.5s ease forwards;
 }
 
@@ -131,52 +115,63 @@
   }
 }
 
-/* Overlay Bar Styling */
-.overlay-bar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  background-color: #00565B;
-  z-index: 999;
-  transform: scaleX(0); /* Initially hidden */
-  transform-origin: center;
-  transition: transform 1s ease; /* Smooth transition */
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 250px 15px 30px; /* Further increased top padding */
+  }
+
+  .about-intro h1 {
+    font-size: 2em; /* Adjusted font size for smaller screens */
+  }
+
+  .about-intro p {
+    font-size: 1em; /* Adjusted font size for smaller screens */
+  }
+
+  .scroll-indicator p {
+    font-size: 1em;
+  }
+
+  .down-arrow {
+    font-size: 1.5em;
+  }
+
+  .specializations-section h2 {
+    font-size: 1.5em;
+  }
+
+  .specialization-item {
+    font-size: 0.9em;
+  }
 }
 
-.overlay-bar-left {
-  left: 0;
-  transform-origin: right;
-}
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 280px 10px 20px; /* Significantly increased top padding for very small screens */
+  }
 
-.overlay-bar-right {
-  right: 0;
-  transform-origin: left;
-}
+  .about-intro h1 {
+    font-size: 1.8em;
+  }
 
-.start-animation .overlay-bar {
-  transform: scaleX(1); /* Expand bars */
-}
+  .about-intro p {
+    font-size: 0.9em;
+  }
 
-/* Next Section Button */
-.next-section-button {
-  margin-top: 30px;
-  background-color: #00565B;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 50%;
-  padding: 20px;
-  font-size: 2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
+  .scroll-indicator p {
+    font-size: 0.9em;
+  }
 
-.next-section-button:hover {
-  background-color: #003F44;
-  transform: scale(1.1); /* Slight enlarge on hover */
-}
+  .down-arrow {
+    font-size: 1.2em;
+  }
 
-.arrow {
-  font-weight: bold;
-  font-size: 1.5em;
+  .specializations-section h2 {
+    font-size: 1.2em;
+  }
+
+  .specialization-item {
+    font-size: 0.8em;
+  }
 }
