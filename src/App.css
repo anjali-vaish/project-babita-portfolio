@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Pumping Text Box with Down Arrow */
+.scroll-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px 0; /* Reduced margin to move it closer */
+  animation: pump 1.5s ease-in-out infinite;
+  position: relative; /* Ensure it stays within its section */
+  top: -60px; /* Shift it upwards */
 }
 
-.App-link {
-  color: #61dafb;
+.scroll-indicator p {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #00565B;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.down-arrow {
+  font-size: 2em;
+  color: #00565B;
+  animation: bounce 1s infinite;
+}
+
+@keyframes pump {
+  0%, 100% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
   }
 }

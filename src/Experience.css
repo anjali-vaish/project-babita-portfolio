@@ -1,0 +1,127 @@
+.experience-container {
+  padding: 50px 20px;
+  background-color: #F5A846; /* Warm orange background */
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.experience-title {
+  font-size: 2.5em;
+  color: #00565B;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.timeline-svg {
+  position: absolute;
+  top: 10%; /* Align the line with the center of the circles */
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust for a consistent curve */
+  z-index: 0; /* Place behind the circles */
+}
+
+.timeline-item {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1; /* Place circles above the SVG line */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #00565B;
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  animation: blink 1.5s infinite; /* Add blinking animation */
+  transition: all 0.3s ease-in-out;
+}
+
+.circle:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  animation: none; /* Stop blinking on hover */
+}
+
+.experience-box {
+  position: absolute;
+  top: 110%; /* Position below the circle */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: left;
+  z-index: 10;
+}
+
+.experience-box h3 {
+  font-size: 1.2em;
+  color: #00565B;
+  margin-bottom: 5px;
+}
+
+.experience-box p {
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+/* Blinking effect for circles */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Next Section Button Styling */
+.next-section-button {
+  margin-top: 40px;
+  background-color: #00565B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.next-section-button:hover {
+  background-color: #003F44;
+  transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+.downward-arrow {
+  margin-left: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
